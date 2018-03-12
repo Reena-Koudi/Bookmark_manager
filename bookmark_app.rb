@@ -5,7 +5,7 @@ class Bookmark < Sinatra::Base
   enable :sessions
 
   get '/' do
-    @links = Link.new.all
+    @links = Link.all
     erb :index
   end
 
