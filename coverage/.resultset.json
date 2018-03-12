@@ -1,0 +1,30 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/reenakoudi/Projects/bookmark_manager/spec/features/bookmark_app_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/reenakoudi/Projects/bookmark_manager/spec/link_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1520870778
+  }
+}
