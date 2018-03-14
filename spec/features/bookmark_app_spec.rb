@@ -1,5 +1,3 @@
-require './bookmark_app.rb'
-
 feature 'Manage my Bookmark' do
   scenario 'Show the list of links' do
     visit('/')
