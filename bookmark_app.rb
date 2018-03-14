@@ -1,6 +1,6 @@
 require 'sinatra/base'
-require './lib/link.rb'
-require 'pg'
+require './lib/link'
+require './database_connection_setup'
 
 class Bookmark < Sinatra::Base
   enable :sessions
