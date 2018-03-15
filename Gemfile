@@ -6,14 +6,11 @@ ruby '2.4.1'
 
 gem 'rake'
 gem 'sinatra'
-
-
-group :test do
-  gem 'capybara'
-  gem 'pg'
-  gem 'rspec'
-  gem 'rubocop'
-  gem 'shotgun'
-  gem 'simplecov', require: false
-  gem 'simplecov-console', require: false
-end
+gem 'sinatra-flash'
+gem 'capybara'
+gem 'pg'
+gem 'rspec'
+gem 'rubocop'
+gem 'shotgun'
+gem 'simplecov', require: false
+gem 'simplecov-console', require: false

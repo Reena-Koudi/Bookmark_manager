@@ -1,12 +1,16 @@
 require 'sinatra/base'
+require 'sinatra/flash'
 require './lib/link'
 require './database_connection_setup'
+require 'uri'
+
 
 class Bookmark < Sinatra::Base
   enable :sessions
+  register Sinatra::Flash
+
 
   get '/' do
-    p 'ENV'
     @links = Link.all
     erb :index
   end
@@ -15,9 +19,9 @@ class Bookmark < Sinatra::Base
     erb :add_a_new_link
   end
 
-  post '/create-a-link' do
-    Link.create(url: params['url'])
-    redirect('/')
+  post '/create-new-link' do
+  flash[:notice] = "You must submit a valid URL" unless Link.create(url: params['url'])
+  redirect '/'
   end
 
 run! if app_file == $0
