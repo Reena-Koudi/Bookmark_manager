@@ -2,9 +2,16 @@ require './lib/database_connection.rb'
 require 'uri'
 
 class Link
+attr_reader :url, :id, :title
+  def initialize(url, id, title)
+    @url = url
+    @id = id
+    @title = title
+  end
+
    def self.all
      result = DatabaseConnection.query("SELECT * FROM links")
-     result.map { |link| link['url'] }
+     result.map { |link| Link.new(link['url'], link['id'], link['title']) }
    end
 
    def self.create(options)
