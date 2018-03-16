@@ -2,7 +2,12 @@
 <h2>My Bookmarked Links</h2>
 <ul>
   <% @links.each do |link| %>
-  <li id="link-<%= link.id %>"><%= link.url %></li>
+
+   <li id="link-<%= link.id %>">
+      <a href="<%= link.url %>" target="_blank">
+        <%= link.title %>
+      </a>
+    </li>
   <% end %>
 </ul>
 <a href='/add-a-new-link'>Add a new link</a>

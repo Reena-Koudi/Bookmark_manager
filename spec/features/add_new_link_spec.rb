@@ -4,8 +4,10 @@ feature 'Adding new link' do
   scenario 'A user adds new link to Bookmark Manager' do
     visit('/add-a-new-link')
     fill_in('url', with: 'http://testlink.com')
+    fill_in('title', with: 'testlink')
+
     click_button('Submit')
-    expect(page).to have_content 'http://testlink.com'
+    expect(page).to have_content 'testlink'
   end
 
   scenario 'A link must be a valid URL' do
