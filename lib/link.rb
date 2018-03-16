@@ -8,7 +8,7 @@ class Link
    end
 
    def self.create(options)
-    return false unless is_url?(options[:url])
+     return false unless is_url?(options[:url])
      DatabaseConnection.query("INSERT INTO links (url) VALUES('#{options[:url]}')")
    end
 

@@ -13,6 +13,6 @@ feature 'Adding new link' do
     fill_in('url', with: 'Invalid link')
     click_button('Submit')
     expect(page).not_to have_content "Invalid link"
-    expect(page).to have_content "You must submit a valid URL"
+    expect(page).to have_content "You must submit a valid URL."
   end
 end

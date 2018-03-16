@@ -6,8 +6,8 @@ require 'uri'
 
 
 class Bookmark < Sinatra::Base
-  enable :sessions
   register Sinatra::Flash
+  enable :sessions
 
 
   get '/' do
@@ -20,8 +20,9 @@ class Bookmark < Sinatra::Base
   end
 
   post '/create-new-link' do
-  flash[:notice] = "You must submit a valid URL" unless Link.create(url: params['url'])
-  redirect '/'
+    link = Link.create(url: params['url'])
+    flash[:notice] = "You must submit a valid URL." unless link
+    redirect('/')
   end
 
 run! if app_file == $0

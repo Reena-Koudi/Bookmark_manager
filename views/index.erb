@@ -1,8 +1,8 @@
+<p><%= styled_flash %></p>
+<h2>My Bookmarked Links</h2>
 <ul>
   <% @links.each do |link| %>
   <li><%= link %></li>
   <% end %>
 </ul>
 <a href='/add-a-new-link'>Add a new link</a>
-
-<p><%= styled_flash %></p>
