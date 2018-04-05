@@ -25,5 +25,16 @@ describe Link do
       url = links.map(&:url)
       expect(url).to  include 'http://www.testlink.com'
     end
+end
+
+describe '.delete' do
+  it 'deletes a link' do
+    Link.delete(id: 1)
+
+    links = Link.all
+    urls = links.map(&:url)
+
+    expect(urls).not_to include "http://www.makersacademy.com"
   end
+end
 end

@@ -25,5 +25,24 @@ class Bookmark < Sinatra::Base
     redirect('/')
   end
 
+  post '/delete-link' do
+    Link.delete(id: params['id'])
+    redirect('/')
+  end
+
+  get '/update-link/:id' do
+  @link = Link.find(params['id'])
+  erb :update_a_link
+end
+
+  post '/update-link' do
+    Link.update(params['id'], params)
+    redirect('/')
+  end
+
+  post '/update-link' do
+    Link.update(id: params['id'], url: params['url'], title: params['title'])
+  end
+
 run! if app_file == $0
 end
